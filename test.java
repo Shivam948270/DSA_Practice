@@ -313,5 +313,3 @@ public class test {
 //    "kungfu master of zodiac","niyander",
 //};
 
-//ok good but remember one thing the problem i soloved exclude them whenever you give question first tell me which ds used ,why it is used  what we achieve by using it,pattern why we choose that pattern first tell me about that pattern why not other why it is better for given question, how should i approach question intutively like supppose  if ihave to teach add to a child i will ask him if two choclate you give your sister and two to your brother how much choclate you give so start question
-//i have not asked you  for code i willl write code just tell how can i think about soliution of question build my problem solving ability also i dont know about pattern so teach me pattern first thell all other things also give template of pattern 
