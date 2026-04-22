@@ -287,29 +287,54 @@ public class test {
         }
         return streak;
     }
+    public static boolean isValid(String s) {
+    Stack<Character> st = new Stack<>();
+
+    for (char c : s.toCharArray()) {
+        if (c == '(' || c == '{' || c == '[') {
+            st.push(c);
+        } else {
+            if (st.isEmpty()) return false;
+
+            char top = st.pop();
+            if ((c == ')' && top != '(') ||
+                (c == '}' && top != '{') ||
+                (c == ']' && top != '[')) {
+                return false;
+            }
+        }
+    }
+    return st.isEmpty();
+}
+    public static int largestRectangle(int[] heights) {
+    Stack<Integer> st = new Stack<>();
+    int max = 0;
+
+    for (int i = 0; i <= heights.length; i++) {
+        int h = (i == heights.length) ? 0 : heights[i];
+
+        while (!st.isEmpty() && h < heights[st.peek()]) {
+            int height = heights[st.pop()];
+            int width = st.isEmpty() ? i : i - st.peek() - 1;
+            max = Math.max(max, height * width);
+        }
+        st.push(i);
+    }
+    return max;
+}
 
     public static void main(String[] args) {
-//test.swap(2,4);
-//test.fib(20);
-//test.pal(121);
-//test.countwordwithoutsplit("java is very fun language,hello my name is shivam jain");
-//        int ar[] = {2, 3, 5, 3, 2, 4, 5, 6, 6, 33, 4, 5, 66, 7};
-//       int[] m= test.slidingWindowMax(ar, 1);
-//       for(int n:m){
-//           System.out.println(n);
-//       }
-        String s = "asteliiavistaa";
+test.swap(2,4);
+test.fib(20);
+test.pal(121);
+test.countwordwithoutsplit("java is very fun language,hello my name is shivam jain");
+       int ar[] = {2, 3, 5, 3, 2, 4, 5, 6, 6, 33, 4, 5, 66, 7};
+      int[] m= test.slidingWindowMax(ar, 1);
+      for(int n:m){
+          System.out.println(n);
+      }
     }
 
 }
-//String[] cartoon = { 
-//    "ben10","perman", "shinchan","zatchbell",
-//     "power ranger spd","pokemon","jhonny test","doraemon","chotta bheem"
-//    "ninja hattori", 
-//     "motu patlu"
-//    "monster kid",
-//     "keymon ache",
-//    "kitretsu",  "hagemaru",
-//    "kungfu master of zodiac","niyander",
-//};
+
 
